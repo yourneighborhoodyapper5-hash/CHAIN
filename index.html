@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IRONCLAD — Combat Prototype</title>
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div id="hud">
+    <div id="player-health-wrap" class="bar-wrap">
+      <div class="bar-label">YOU</div>
+      <div class="bar-bg"><div id="player-health" class="bar-fill player"></div></div>
+    </div>
+    <div id="enemy-health-wrap" class="bar-wrap">
+      <div class="bar-label">HOLLOWGUARD</div>
+      <div class="bar-bg"><div id="enemy-health" class="bar-fill enemy"></div></div>
+    </div>
+    <div id="sprint-stamina-wrap" class="bar-wrap small">
+      <div class="bar-bg"><div id="sprint-stamina" class="bar-fill sprint"></div></div>
+    </div>
+    <div id="combat-stamina-wrap" class="bar-wrap small">
+      <div class="bar-bg"><div id="combat-stamina" class="bar-fill combat"></div></div>
+    </div>
+    <div id="prompt" class="prompt"></div>
+    <div id="crosshair"></div>
+  </div>
+
+  <div id="start-screen">
+    <div id="start-panel">
+      <h1>IRONCLAD</h1>
+      <p class="tag">a tiny combat prototype</p>
+      <div class="controls-grid">
+        <div>
+          <h3>Keyboard / Mouse</h3>
+          <ul>
+            <li><b>WASD</b> — Move</li>
+            <li><b>Mouse</b> — Look</li>
+            <li><b>Shift</b> — Sprint</li>
+            <li><b>Left Click</b> — Attack (swing right as a hit lands to parry)</li>
+            <li><b>Right Click (hold)</b> — Block</li>
+            <li><b>Space</b> — Dodge</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Controller</h3>
+          <ul>
+            <li><b>Left Stick</b> — Move</li>
+            <li><b>Right Stick</b> — Camera</li>
+            <li><b>RT / R2</b> — Attack / parry (time it)</li>
+            <li><b>LT / L2 (hold)</b> — Block</li>
+            <li><b>A / Cross</b> — Sprint (hold)</li>
+            <li><b>B / Circle</b> — Dodge</li>
+          </ul>
+        </div>
+      </div>
+      <button id="start-btn">CLICK TO FIGHT</button>
+      <p class="hint">Mouse will lock to the window while playing. Press ESC to release it.</p>
+    </div>
+  </div>
+
+  <div id="death-screen" class="hidden">
+    <div id="death-panel">
+      <h1 id="death-title">YOU DIED</h1>
+      <button id="retry-btn">TRY AGAIN</button>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
